@@ -1,0 +1,198 @@
+// Import all of Bootstrap's CSS
+@import "~bootstrap/scss/bootstrap";
+
+$primary-clr: #655ec6;
+$primary-bg: #2c2c38;
+$primary-txt-clr: white;
+$secondary-txt-clr: #5f5f6b;
+$secondary-bg: #21212d;
+$main-bg: #fafbfb;
+$light-gray: #f7f7f7;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: $primary-bg;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+
+div.kanban-container {
+  background-color: $secondary-bg;
+  color: $primary-txt-clr;
+  margin: auto;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  max-width: 1100px;
+  height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  & *::selection {
+    background-color: transparent;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 4rem;
+
+    & > button {
+      background-color: $primary-clr;
+      border-radius: 1rem;
+      color: $primary-txt-clr;
+      border: none;
+      padding: 0.5rem 1rem;
+      text-transform: capitalize;
+      cursor: pointer;
+    }
+  }
+
+  .inner-container {
+    height: calc(100% - 4rem);
+    max-height: calc(100% - 4rem);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    .column {
+      max-height: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+
+      &:first-of-type .column__header::before {
+        background-color: #60c9e7;
+      }
+      &:nth-of-type(2) .column__header::before {
+        background-color: $primary-clr;
+      }
+      &:last-of-type .column__header::before {
+        background-color: #7bd9b4;
+      }
+    }
+    .column__header {
+      position: sticky;
+      top: 0;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding-bottom: 0.5rem;
+      height: 2rem;
+      font-size: small;
+      font-weight: 100;
+      text-transform: capitalize;
+      color: gray;
+
+      &::before {
+        content: "";
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        margin-right: 0.3rem;
+      }
+    }
+    .column__body {
+      overflow: auto;
+      max-height: calc(100% - 2rem);
+      flex-grow: 1;
+
+      &.dragging-over {
+        border: 1px dashed lightslategray;
+      }
+      & .task-card:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.draggable.dragging {
+  opacity: 0.5;
+}
+
+div.task-card {
+  background-color: $primary-bg;
+  width: 100%;
+  color: $primary-txt-clr;
+  border-radius: 5px;
+  padding: 0.8rem;
+  h5 {
+    font-size: 1rem;
+  }
+  p {
+    color: $secondary-txt-clr;
+    font-size: 0.8rem;
+  }
+}
+
+form {
+    margin: 1rem;
+    & > div.input-group {
+      margin-bottom: 0.8rem;
+    }
+  
+    label {
+      display: block;
+      padding-bottom: 0.2rem;
+      text-transform: capitalize;
+      font-size: 14px;
+    }
+  
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+      padding: 0.4rem;
+      background-color: transparent;
+      border: 2px solid $secondary-txt-clr;
+      color: $primary-txt-clr;
+      border-radius: 0.2rem;
+    }
+    textarea {
+      resize: none;
+    }
+  
+    button {
+      border: none;
+      width: 100%;
+      border-radius: 1rem;
+      text-transform: capitalize;
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+  
+    button[type="submit"] {
+  
+      color: $primary-clr;
+      background-color: white;
+    }
+  }
+
+  .modal-content {
+    background-color: $primary-bg;
+    color: $primary-txt-clr
+  }
+
+  #task-details-modal {
+    .modal-header {
+        border: none;
+        padding-bottom: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+    }
+    button {
+        background-color: transparent;
+        border: none
+    }
+  }
