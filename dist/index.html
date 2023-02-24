@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap w/ Vite</title>
+  <script type="module" crossorigin src="/assets/index-50f85238.js"></script>
+  <link rel="stylesheet" href="/assets/index-711e4af5.css">
+</head>
+
+<body>
+    <!-- Modal -->
+    <div class="modal fade" id="create-task-modal" tabindex="-1" >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <form class="modal__card" name="add-new-task">
+            <div class="input-group">
+              <label for="title">title</label>
+              <input type="text" id="title" name="title" />
+            </div>
+            <div class="input-group">
+              <label for="description">description</label>
+              <textarea id="description" cols="40" rows="5" name="description"></textarea>
+            </div>
+            <button type="submit">create task</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+  <div class="kanban-container">
+    <header class="header">
+      <h2>Kanban</h2>
+      <button type="button" data-bs-toggle="modal" data-bs-target="#create-task-modal">
+        + add new task
+      </button>
+    </header>
+    <div class="flex-center inner-container">
+      <div class="column">
+        <h4 class="column__header">todo</h4>
+        <div class="column__body dragging-container" data-status="todo">
+
+        </div>
+      </div>
+      <div class="column">
+        <h4 class="column__header">in progress</h4>
+        <div class="column__body dragging-container" data-status="in-progress">
+        </div>
+      </div>
+      <div class="column">
+        <h4 class="column__header"></span>done</h4>
+        <div class="column__body dragging-container" data-status="done">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div class="modal" id="task-details-modal"  tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+      </div>
+    </div>
+  </div>
+
+
+  
+  <script>
+    //                const dummyData = [
+    //       {
+    //           id: "1" ,
+    //       title: "task1" ,
+    //       description: "Lorem ipsum dolor sit amet consectetur adipisicing ." ,
+    //       status: "todo"
+    //   },
+    //   {
+    //       id: "2" ,
+    //       title: "task2" ,
+    //       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut officiis voluptatibus" ,
+    //       status: "done" ,
+    //   },
+    //   {
+    //       id: "3" ,
+    //       title: "task3" ,
+    //       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut officiis voluptatibus" ,
+    //       status: "done"
+
+    //   },
+    //   {
+    //       id: "4" ,
+    //       title: "task4" ,
+    //       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut officiis voluptatibus" ,
+    //       status: "in-progress"
+    //   },
+    //   {
+    //       id: "5" ,
+    //       title: "task5" ,
+    //       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut officiis voluptatibus Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut officiis voluptatibus Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut officiis voluptatibus" ,
+    //       status: "in-progress"
+    //   },
+    // ]
+    // localStorage.setItem("tasks" , JSON.stringify(dummyData))
+
+  </script>
+</body>
+
+</html>
