@@ -4,9 +4,9 @@ export class Board {
         draggingContainers.forEach(container => container.innerHTML = "")
     }
 
-    renderTasks(tasks) {
+    renderTasks(tasks = []) {
         const draggingContainers = document.querySelectorAll('.dragging-container')
-        tasks.forEach(task => {
+        tasks?.forEach(task => {
             draggingContainers.forEach(container => {
                 if (container.getAttribute('data-status') === task.status) {
                     container.innerHTML += `

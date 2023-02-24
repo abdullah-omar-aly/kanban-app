@@ -11,10 +11,11 @@ export class Task {
         }
 
         localStorage.setItem('tasks', JSON.stringify([...this.getAllTasks(), newTask]))
+        console.log('tasks from localstorage' , JSON.parse(localStorage.getItem('tasks')))
 
     }
     getAllTasks () {
-        return JSON.parse(localStorage.getItem('tasks'))
+        return JSON.parse(localStorage.getItem('tasks') ) || []
     }
 
     getSingleTask(taskId) {

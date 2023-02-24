@@ -56,7 +56,7 @@ window.deleteTask = function (e) {
 
 //handling add new task
 document.getElementById("add-task-btn").addEventListener('click', (e) => {
-    e.preventDefault()
+    // e.preventDefault()
     const addTaskform = document.forms['add-new-task']
 
     const title = addTaskform.title.value
