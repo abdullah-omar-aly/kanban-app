@@ -54,18 +54,18 @@ window.deleteTask = function (e) {
 
 
 
-
 //handling add new task
-document.forms['add-new-task'].addEventListener('submit', (e) => {
+document.getElementById("add-task-btn").addEventListener('click', (e) => {
     e.preventDefault()
+    const addTaskform = document.forms['add-new-task']
 
-    const title = e.currentTarget.title.value
-    const description = e.currentTarget.description.value
+    const title = addTaskform.title.value
+    const description = addTaskform.description.value
 
     TaskModel.create(title, description)
 
-    e.currentTarget.title.value = ""
-    e.currentTarget.description.value = ""
+    addTaskform.title.value = ""
+    addTaskform.description.value = ""
 
     // createTaskModal.hide()
 
