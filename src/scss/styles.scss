@@ -1,19 +1,7 @@
-// Import all of Bootstrap's CSS
-// @import "~bootstrap/scss/bootstrap";
+@import '_colors.scss';
+@import '_normalize.scss';
+@import '_scrollbar.scss';
 
-$primary-clr: #655ec6;
-$primary-bg: #2c2c38;
-$primary-txt-clr: white;
-$secondary-txt-clr: #5f5f6b;
-$secondary-bg: #21212d;
-$main-bg: #fafbfb;
-$light-gray: #f7f7f7;
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 
 body {
   background-color: $primary-bg;
@@ -21,27 +9,6 @@ body {
   padding-right: 1rem;
 }
 
-::-webkit-scrollbar {
-  width: 0.5rem;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 50px;
-  background: #666;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #888;
-}
-::-webkit-scrollbar-thumb:active {
-  background: #555;
-}
-
-::-webkit-scrollbar-track {
-  background: #d9d9d9;
-  border: 0px none #ffffff;
-  border-radius: 50px;
-}
 
 div.kanban-container {
   background-color: $secondary-bg;
@@ -155,6 +122,9 @@ div.task-card {
 }
 
 form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin: 1rem;
   & > div.input-group {
     margin-bottom: 0.8rem;
@@ -181,37 +151,17 @@ form {
     resize: none;
   }
 
+
+
   button {
-    border: none;
-    width: 100%;
+    background-color: $primary-clr;
     border-radius: 1rem;
+    color: $primary-txt-clr;
+    border: none;
+    
+    padding: 0.5rem 1rem;
     text-transform: capitalize;
-    padding: 0.5rem;
     cursor: pointer;
   }
-
-  button[type="submit"] {
-    color: $primary-clr;
-    background-color: white;
-  }
 }
 
-.modal-content {
-  background-color: $primary-bg;
-  color: $primary-txt-clr;
-}
-
-#task-details-modal {
-  .modal-header {
-    border: none;
-    padding-bottom: 0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10px;
-  }
-  button {
-    background-color: transparent;
-    border: none;
-  }
-}

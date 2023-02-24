@@ -27,17 +27,7 @@ export class Task {
         localStorage.setItem('tasks', JSON.stringify(tasks))
     }
 
-    // update({
-    //     taskId , title , description
-    // }) {
-    //     const task = this.getSingleTask(taskId)
-    //     console.log(task)
-    //     task.title = title
-    //     task.description = description
 
-    //     this.delete(taskId)
-    //     localStorage.setItem('tasks', JSON.stringify([...this.getAllTasks(), task]))
-    // }
 }
 
   

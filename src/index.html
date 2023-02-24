@@ -8,31 +8,24 @@
 </head>
 
 <body>
-    <!-- Modal -->
-    <div class="modal fade" id="create-task-modal" tabindex="-1" >
-      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-          <form class="modal__card" name="add-new-task">
-            <div class="input-group">
-              <label for="title">title</label>
-              <input type="text" id="title" name="title" />
-            </div>
-            <div class="input-group">
-              <label for="description">description</label>
-              <textarea id="description" cols="40" rows="5" name="description"></textarea>
-            </div>
-            <button  id="add-task-btn" type="button">create task</button>
-          </form>
-        </div>
-      </div>
-    </div>
-    
+
   <div class="kanban-container">
     <header class="header">
       <h2>Kanban</h2>
-      <button type="button" data-bs-toggle="modal" data-bs-target="#create-task-modal">
-        + add new task
-      </button>
+      <form name="add-new-task" id="login-form">
+        <div class="input-group">
+          <label for="title">title</label>
+          <input type="text" id="title" name="title" />
+        </div>
+        <div class="input-group">
+          <label for="description">description</label>
+          <input type="text" id="description" name="description" />
+        </div>
+        <button type="button" id="add-task-btn">
+          + add new task
+        </button>
+      </form>
+
     </header>
     <div class="flex-center inner-container">
       <div class="column">
@@ -57,7 +50,7 @@
 
 
 
-  <div class="modal" id="task-details-modal"  tabindex="-1">
+  <div class="modal" id="task-details-modal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
 
